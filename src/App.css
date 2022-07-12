@@ -1,38 +1,108 @@
 .App {
-  text-align: center;
+  background-color: rgb(36, 40, 46);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+h1 {
+  padding: 2.5rem 0;
+  color: white;
+  font-size: 5rem;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.characters {
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 2rem 3rem;
+  gap: 2rem;
+}
+
+.card {
+  width: 100%;
+  background: rgb(59, 62, 67);
+  border-radius: 0.5rem;
+  overflow: hidden;
+  display: flex;
+}
+
+.card img {
+  max-width: 50%;
+  object-fit: cover;
+}
+
+.loading {
+  background-color: rgb(36, 40, 46);
+  height: 100vh;
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+.loading h3 {
   color: white;
+  font-size: 7.5rem;
 }
 
-.App-link {
-  color: #61dafb;
+.text-container {
+  padding: 1rem;
+  color: white;
+  font-size: 1.25rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.text-container h3 {
+  font-size: 2rem;
+}
+
+.status {
+  margin-bottom: 1rem;
+}
+
+.title {
+  color: grey;
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+button {
+  padding: 1rem 4rem;
+  font-size: 2rem;
+  margin: 2rem 0;
+  margin-right: 1rem;
+  border: 2px solid #fff;
+  border-radius: 10px;
+  color: white;
+  background: none;
+  cursor: pointer;
+  transition: all 200ms ease-in-out;
+}
+
+button:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+button:not(:disabled):hover {
+  background: #fff;
+  color: rgb(59, 62, 67);
+}
+
+@media (max-width: 640px) {
+  .card {
+    flex-direction: column;
   }
-  to {
-    transform: rotate(360deg);
+
+  .card img {
+    max-width: unset;
+    width: 100%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .card {
+    width: 45%;
   }
 }
